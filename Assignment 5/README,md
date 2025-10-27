@@ -1,0 +1,123 @@
+📘 Week 5: Supervised Learning – Regression
+🎯 Objective
+
+The goal of this assignment is to build a baseline regression model on the Customer Churn Dataset using Linear Regression.
+You will split the dataset into training and testing sets, train a model, and evaluate it using Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE).
+
+🧾 Steps Performed
+1. Data Loading
+
+Imported the dataset cleaned customer churn dataset.csv using Pandas.
+
+Displayed shape, column names, and checked for missing values.
+
+2. Data Preprocessing
+
+Encoded all categorical columns using LabelEncoder.
+
+Dropped irrelevant identifier columns such as customerID if present.
+
+Selected an appropriate target variable (e.g., Churn, MonthlyCharges, or similar).
+
+3. Feature Selection
+
+Used all remaining columns as input features (X) and the chosen target as output (y).
+
+4. Train/Test Split
+
+Split data using train_test_split() from Scikit-learn with:
+
+80% training data
+
+20% testing data
+
+Random seed = 42 for reproducibility
+
+5. Model Training
+
+Trained a Linear Regression model using:
+
+from sklearn.linear_model import LinearRegression
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+6. Model Evaluation
+
+Predicted test set values and calculated:
+
+Mean Absolute Error (MAE)
+
+Root Mean Squared Error (RMSE)
+
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+mae = mean_absolute_error(y_test, y_pred)
+rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+
+
+Printed both metrics to compare performance.
+
+📊 Evaluation Metrics
+Metric	Description	Lower is Better
+MAE	Average absolute difference between predicted and actual values	✅
+RMSE	Square root of mean squared differences (more sensitive to large errors)	✅
+💡 Insights
+
+The baseline Linear Regression model establishes a simple benchmark.
+
+You can later compare it with advanced models like:
+
+Decision Tree Regressor
+
+Random Forest Regressor
+
+Gradient Boosting Regressor
+
+Feature scaling and outlier removal can further improve results.
+
+🧰 Libraries Used
+
+Pandas – Data handling
+
+NumPy – Numerical operations
+
+Scikit-Learn – Model training, evaluation, and metrics
+
+Matplotlib / Seaborn (optional) – For visualization
+
+⚙️ How to Run
+🔹 Option 1: Jupyter Notebook
+
+Open the Jupyter Notebook environment.
+
+Place both files (cleaned customer churn dataset.csv and the .ipynb file) in the same folder.
+
+Run each cell in order:
+
+shift + enter
+
+
+The results (MAE and RMSE) will appear in the output cells.
+
+🔹 Option 2: Python Script
+
+Save the code as regression_model.py.
+
+Ensure the dataset file is in the same directory.
+
+Run in the terminal:
+
+python regression_model.py
+
+
+View evaluation metrics in the console output.
+
+🚀 Next Steps (Project Milestone)
+
+Perform feature engineering to improve predictive power.
+
+Try advanced regression models (e.g., Random Forest, Gradient Boosting).
+
+Compare performance metrics to select the best model for your project.
+
+🖋 Prepared By: Nida Sajjad
+📅 Week 5 – Regression Assignment
